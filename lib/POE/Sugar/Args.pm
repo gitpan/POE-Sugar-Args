@@ -1,5 +1,5 @@
 package POE::Sugar::Args;
-# $Id: Args.pm,v 1.1 2003/03/28 19:49:08 cwest Exp $
+# $Id: Args.pm,v 1.2 2003/03/28 20:56:22 cwest Exp $
 use strict;
 $^W = 1;
 
@@ -8,8 +8,8 @@ use Devel::Caller::Perl qw[called_args];
 use Exporter::Lite;
 use vars qw[$VERSION @EXPORT];
 
-$VERSION = (qw$Revision: 1.1 $)[1];
-@EXPORT  = qw[sweeten_args];
+$VERSION = (qw$Revision: 1.2 $)[1];
+@EXPORT  = qw[sweet_args];
 
 =head1 NAME
 
@@ -20,7 +20,7 @@ POE::Sugar::Args - Get "pretty", OO representation of args.
  use POE::Sugar::Args;
 
  sub _start {
-   my $poe = sweeten_args;
+   my $poe = sweet_args;
    $poe->kernel->yield( '_stop' );
  }
 
@@ -43,6 +43,8 @@ but you took the candy so you can suffer the consequences.  Good luck.
 =head1 DESCRIPTION
 
 =head2 Exports
+
+=head3 sweet_args
 
 This function will get C<@_> from the calling state by doing deep,
 dark voodoo.  It will construct the C<POE::Sugar::Args> object for
@@ -94,7 +96,7 @@ All arguments this event was called with.
 
 =cut
 
-sub sweeten_args { __PACKAGE__->new( called_args ) }
+sub sweet_args   { __PACKAGE__->new( called_args ) }
 sub new          { bless [ @_[1..$#_] ], $_[0]     }
 sub object       { $_[0]->[OBJECT]                 }
 sub session      { $_[0]->[SESSION]                }

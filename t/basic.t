@@ -34,13 +34,13 @@ sub construct {
 }
 
 sub sweeten {
-	my $poe = sweeten_args;
+	my $poe = sweet_args;
 
 	$poe->kernel->yield( test => $poe );
 }
 
 sub test {
-	my $poe = sweeten_args;
+	my $poe = sweet_args;
 	
 	my ($test) = $poe->args->[0];
 
