@@ -1,14 +1,13 @@
 package POE::Sugar::Args;
-# $Id: Args.pm,v 1.2 2003/03/28 20:56:22 cwest Exp $
+# $Id: Args.pm,v 1.1 2003/09/30 22:06:19 cwest Exp $
 use strict;
-$^W = 1;
 
 use POE::Session;
 use Devel::Caller::Perl qw[called_args];
 use Exporter::Lite;
 use vars qw[$VERSION @EXPORT];
 
-$VERSION = (qw$Revision: 1.2 $)[1];
+$VERSION = '1.3';
 @EXPORT  = qw[sweet_args];
 
 =head1 NAME
@@ -133,8 +132,5 @@ modify it under the same terms as Perl itself.
 =head1 SEE ALSO
 
 L<perl>, L<Devel::Caller>, L<DB>, L<perldebguts>.
-
-=cut
-
 
 =cut
