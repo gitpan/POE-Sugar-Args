@@ -1,0 +1,15 @@
+--- #YAML:1.0
+name: POE-Sugar-Args
+version: 1.1
+license: perl
+distribution_type: module
+requires:
+  Devel::Caller::Perl: 0
+  Exporter::Lite: 0
+  POE: 0
+recommends: {}
+build_requires:
+  Module::Build: 0
+  Test::More: 0
+conflicts: {}
+generated_by: Module::Build version 0.16
